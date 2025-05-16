@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Radian 2k25</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css">
+        <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </head>
+<body>
+    <section>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+
+                <!-- Brand Logo and Name -->
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <img class="logo" src="/Radian_logo.png" alt="Radian 2K25 Logo"
+                        style="height: 4rem; border-radius: 3rem; background: black; ">
+                    <span
+                        style="font-weight: 600; font-size: 1.4rem; color:rgb(255, 255, 255); margin-left: 30px;">Radian
+                        2K25</span>
+                </a>
+
+                <!-- Mobile Menu Toggle Button -->
+                <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
+                    aria-expanded="false" aria-label="Toggle navigation"
+                    style="background-color: white;">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation Links -->
+                <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                    <ul style="margin-top: 20px;">
+                        <li style="--i:#a955ff;--j:#ea51ff">
+                            <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                            <span class="title"><a href="#home"
+                                    style="color: inherit; text-decoration: none;">HOME</a></span>
+                        </li>
+                        <li style="--i:#56CCF2;--j:#2F80ED">
+                            <span class="icon"><ion-icon name="calendar-outline"></ion-icon></span>
+                            <span class="title"><a href="#testimonials"
+                                    style="color: inherit; text-decoration: none;">EVENTS</a></span>
+                        </li>
+                        <li style="--i:#FF9966;--j:#FF5E62">
+                            <span class="icon"><ion-icon name="accessibility-outline"></ion-icon></span>
+                            <span class="title"><a href="#coordinators"
+                                    style="color: inherit; text-decoration: none;">Coordinators</a></span>
+                        </li>
+                        <li style="--i:#80FF72;--j:#7EE8FA">
+                            <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
+                            <span class="title"><a href="#faq"
+                                    style="color: inherit; text-decoration: none;">FAQ'S</a></span>
+                        </li>
+                        <li style="--i:#ffa9c6;--j:#f434e2">
+                            <span class="icon"><ion-icon name="call-outline"></ion-icon></span>
+                            <span class="title"><a href="#contacts"
+                                    style="color: inherit; text-decoration: none;">Contact</a></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+                <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </nav>
+    </section>
+        <!-- RADIAN LOGO WITH LOADING -->
+        <section class="section-video">
+            <div class="video-container ">
+                <video autoplay muted loop>
+                    <source src="/Radian2k25_Loading_video.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+     <!-- Name Radian Content -->
+     <section class="main" id="home">
+        <h1 class="fw-bold radian">RADIAN 2<span style="color: #001F3F;">K</span>25</h1>
+        <p style="font-size: 20px;">Where algorithms meet artistry, and logic meets limitless creativity. A fest designed for every thinker,
+            creator, and innovator!</p>
+        <p>📅 </i>6<sup>th</sup> & 7<sup>th</sup> March, 2025</p>
+        <p>📍ANITS</p>
+    </section>
+
+    <section class="section2 text-center p-5">
+        <h1>Get a glimpse of all the thrilling events in one go!</h1>
+        <p>Dive into our vibrant poster, uncover exciting happenings, and map out your perfect experience. Don't let the
+            fun pass you by!</p>
+
+        <button type="button" class="btn btn-primary btn-lg" id="explorePosterBtn">Explore Poster</button>
+
+        <div id="popup">
+            <img src="/Radian_Poster_1.png" alt="Radian_2k25_Poster" id="popup-img"
+                onclick="downloadPoster('Radian_Poster_1.png')">
+        </div>
+        <div class="darken-bg"></div>
+    </section>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const popup = document.getElementById("popup");
+            const darkenBg = document.querySelector(".darken-bg");
+            const exploreBtn = document.getElementById("explorePosterBtn");
+            const popupImg = document.getElementById("popup-img");
+
+            exploreBtn.addEventListener("click", function () {
+                popup.style.display = "block";
+                darkenBg.style.display = "block";
+            });
+
+            darkenBg.addEventListener("click", function () {
+                popup.style.display = "none";
+                darkenBg.style.display = "none";
+            });
+
+            popupImg.addEventListener("click", function() {
+                downloadPoster(this.src);
+            });
+        });
+
+        function downloadPoster(url) {
+            const val = confirm("Want to Download the Poster? Click 'OK' and share the poster in social media with #Radian2k25!");
+            if (val) {
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = "RADIAN_POSTER_1.png"; // Changed extension to match source file
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            }
+        }
+    </script>
+
+
+
+<section class="section3 text-center p-5 ">
+    <h1 style="color: #071952;">Radian 2K25: A Global Cultural Expedition</h1><br>
+    <p>🌍Experience the World – Immerse yourself in diverse cultures right on campus! </p>
+    <p>🎉 Thrills at Every Turn -Get ready for a spectacular lineup of events and a chance to win exciting prizes!
+    </p>
+    <p>🍽 Feast & Fest - Relish mouthwatering delights as you dive into the festival’s lively spirit!</p>
+</section>
+
+
+
+
+<section class="container text-center allevents" id="testimonials">
+    <h1 style="color: #0029b1; font-size: 40px;margin-top: 40px; padding: 10px; background-color: azure;">Thrilling
+        Roster</h1><br>
+    <h4 class="tech_name">Technical Events</h4>
+    <div class="position-relative"> 
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Tech_Quiz_Poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Tech Quiz">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Tech Quiz</h5>
+                                <p>Test your technical knowledge!</p>
+                            </div><a href="https://docs.google.com/forms/d/e/1FAIpQLSeaUcE9cnD7V3q8fPVjTtAbmjo29rrijZVHDe3Y-WQ2btge8g/viewform"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right"
+                    data-aos-delay="500">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Projectexpo_poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Project Expo">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Project Expo</h5>
+                                <p>Showcase your projects!</p>
+                            </div><a href="https://forms.gle/3bZNViEs9aj6ZG299"> <button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right"
+                    data-aos-delay="200">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/BID.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Business">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Blind Bid Business</h5>
+                                <p>Explore the world of business!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfoVMpe93qJnu3JpQVnNSPGNRJDlOH52B2HfLVJpkkoIoXGPw/viewform?usp=send_form"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right"
+                    data-aos-delay="300">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Design Sprint.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Design Sprint">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Design Sprint</h5>
+                                <p>Showcase your design skills!</p>
+                            </div><a href="https://docs.google.com/forms/d/e/1FAIpQLSeW7TaU0g3RN60fxRfbFK9GhnwzT7DjJOsZ1yHHLWT0PIdH4g/viewform"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right"
+                    data-aos-delay="400">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Code_Crusade_Poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Coding">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Code Crusade</h5>
+                                <p>Test your coding skills!</p>
+                            </div><a href="https://docs.google.com/forms/d/e/1FAIpQLSeee7PH5tq_6a5R9Uu9qMjOi4SZpoLk7njsS1IX6DbuVSmzyQ/viewform?usp=sharing"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 400px; perspective: 1000px; margin: 0 auto;" data-aos="fade-right"
+                    data-aos-delay="100">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/PAPERVERSE.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Paper Presentation">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Paper & Poster Presentation</h5>
+                                <p>Show off your Presentation!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdCIZzfRG7bnoNnYpkNdTHv3wqXB6Lh65POsQZjNu9hH8xeEg/viewform"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h4 class="non_tech_name">Non Technical Events</h4>
+    <div class="position-relative" style="padding: 20px 0;">
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-left">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Framefest_poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Frame Fest">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Frame Fest</h5>
+                                <p>Showcase your photography!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLScYXQ-uEvNQL_bvrRspS9ZBxZBKmJdzuLGaw6oucJQfgAIyEw/viewform"> <button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width:400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-left"
+                    data-aos-delay="100">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Mr&ms_Radian.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="Mr & Ms Radian">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>Mr & Ms Radian</h5>
+                                <p>Show your personality!</p>
+                            </div>
+                           <a href="https://docs.google.com/forms/d/e/1FAIpQLSelzLc3fsl8MJ7TyekTtTUGK0sW2NtNVbEi6xAgI1MATOWEiw/viewform"> <button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width: 400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-left"
+                    data-aos-delay="500">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/E-sports.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="E-SPORTS">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>E-SPORTS</h5>
+                                <p>Compete in gaming!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc6tyjyPiqOfR8O5yNka4AM0e4hScV46KLFyHSx_VwZ3Y68Eg/viewform?usp=header"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width: 400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-left"
+                    data-aos-delay="400">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/SoulSpeaks_Poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="CINEMYSTRY">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>SoulSpeaks</h5>
+                                <p>Express yourself!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSeJiupQNP3O5q7x3hcrh98WxpsNrvczPkpRbdGJR3TMyp1Bkw/viewform"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card event-card"
+                    style="width: 400px; height: 250px; perspective: 1000px; margin: 0 auto;" data-aos="fade-left"
+                    data-aos-delay="400">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="/Cinemystery_Poster.jpg"
+                                class="card-img-top h-100 w-100" style="object-fit: fill;" alt="CINEMYSTRY">
+                        </div>
+                        <div class="card-back d-flex flex-column justify-content-between p-3">
+                            <div>
+                                <h5>CINEMYSTRY</h5>
+                                <p>Explore cinema!</p>
+                            </div>
+                            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc2lByzrBncruUnAD3ESxGxjEIpDpO24jfS4FYNvGti3pmUUg/viewform"><button class="btn btn-primary mb-2">Register Now</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<section class="section4" id="coordinators">
+    <h1 class="text-center" style="font-size: 50px;">Event Coordinators</h1>
+    <p class="text-center mx-auto" style="width: 80%; margin-top: 20px;">Our team of event coordinators are
+        dedicated to making your event a success. With years of experience in the industry, we have the knowledge
+        and expertise to ensure that your event runs smoothly and efficiently.</p>
+    <div id="coordinatorCarousel" class="carousel slide" data-bs-ride="false">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="d-flex justify-content-center">
+                    <div class="card coordinator-card">
+                        <img src="/IT_HODMADAM.jpg" class="card-img-top" alt="Coordinator 1">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">DR M.Rekha Sundari</h5>
+                            <p>Convener</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/prasadusir.jpg" class="card-img-top" alt="Coordinator 2">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.Reddi Prasadu</h5>
+                            <p>Faculty Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/praveensir.jpg" class="card-img-top" alt="Coordinator 3">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.A Durga Praveen Kumar</h5>
+                            <p>Faculty Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card coordinator-card">
+                        <img src="/Hasita.jpg" class="card-img-top" alt="Coordinator 4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ms.P Hasita</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/Vasuta.jpg" class="card-img-top" alt="Coordinator 5">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ms.Vasuta Kuchhadia</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/Madhuri.jpg" class="card-img-top" alt="Coordinator 6">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ms.Unna Madhuri</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="d-flex justify-content-center">
+                    <div class="card coordinator-card">
+                        <img src="/Santhosh.jpg" class="card-img-top" alt="Coordinator 7">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.M Santosh Bhargav</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/Charan.jpg" class="card-img-top" alt="Coordinator 8">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.Gedela Charan</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/Abhishek.jpg" class="card-img-top" alt="Coordinator 9">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.VNVS Abhishek</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                    <div class="card coordinator-card">
+                        <img src="/V.Udaya Sri Sahith.jpg" class="card-img-top" alt="Coordinator 10">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Mr.V.Udaya Sri Sahith</h5>
+                            <p>Student Coordinator</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#coordinatorCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#coordinatorCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="section5 text-center" id="faq">
+    <h1><strong>Frequently Asked Questions</strong></h1>
+
+    <div class="faq-container">
+        <div class="item-wrapper">
+            <h5><strong>How to Register?</strong></h5>
+            <p>To register, simply click on the event you're interested in and fill out the form.</p>
+        </div>
+        <div class="item-wrapper">
+            <h5><strong>Where can I find the schedule of events?</strong></h5>
+            <p>The schedule will be available on our website and social media pages.</p>
+        </div>
+        <div class="item-wrapper">
+            <h5><strong>Can other college students participate?</strong></h5>
+            <p>Yes, Radian 2k25 is open to all colleges, come join the fun!</p>
+        </div>
+        <div class="item-wrapper">
+            <h5><strong>Can I Bring Guests?</strong></h5>
+            <p>Absolutely! Feel free to bring your friends to enjoy the fest and participate in exciting events.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section6" id="contacts">
+    <h1 style="text-align: center; color: darkblue;"><strong>Contact Us</strong></h1>
+    <div class="contactus">
+        <div class="contact-details">
+            <h4 id="Details_name">Details</h4>
+            <div class="Details_card card">
+                <p><strong>Email:</strong>
+                    <a href="mailto:radian2k25@anits.edu.in" class="text-black">
+                        radian2k25@anits.edu.in
+                    </a>
+                </p>
+                <p><strong>Address:</strong> ANITS College, Tagarapuvalasa, Visakhapatnam</p>
+                <p><strong>Fest Dates:</strong> 6th & 7th March</p>
+            </div>
+        </div>
+        <div class="contact-location">
+            <h4 id="Location_name">Location</h4>
+            <div class="google-map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15185.161936900435!2d83.40582400560375!3d17.918600351023166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3957c78419fb77%3A0xdec70d540dbb8b0d!2sANITS!5e0!3m2!1sen!2sin!4v1738938086244!5m2!1sen!2sin"
+                    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="footer">
+    <div id="footer_content">
+        <div class="text-center">
+            <p>Made with ❤️ by ANITS Web Team (Dept. of Information Technology)</p>
+            <p>Copyright © 2001 - 2025 ANITS - All Rights Reserved.</p>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
