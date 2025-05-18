@@ -8,7 +8,7 @@ This is a **static, responsive website** designed and developed using modern fro
 
 ## 🔗 Live Website
 
-👉 [Click here to view the live site](https://dineshketana.github.io/Radian2k25-FestWebsite/)
+👉 [Click here to view the live site](http://radian2k25.anits.edu.in/)
 
 ---
 
